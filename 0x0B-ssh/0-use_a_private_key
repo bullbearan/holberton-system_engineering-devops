@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This is a line of text
+ssh -i ~/.ssh/school ubuntu@54.234.239.181
