@@ -2,8 +2,8 @@
 # This is a line of text
 sudo apt -y install --no-install-recommends software-properties-common
 sudo add-apt-repository ppa:vbernat/haproxy-2.4 -y
-sudo apt install haproxy=2.4.\*
-sudo apt update && sudo apt upgrade -y
+sudo apt install -y haproxy=2.4.\*
+sudo apt update -y && sudo apt upgrade -y
 echo "
 frontend load_balancer
 	bind *:80
