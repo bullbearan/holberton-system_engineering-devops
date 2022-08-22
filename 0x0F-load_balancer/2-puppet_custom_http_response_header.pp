@@ -1,6 +1,6 @@
 # This is a line of text
 exec { 'update':
-  command => '/usr/bin/apt update',
+	command => '/usr/bin/apt update',
 }
 
 package { 'nginx':
@@ -8,11 +8,12 @@ package { 'nginx':
 	require => Exec['update'],
 }
 
-file_line {'header':
+file_line { 'header':
     ensure  => 'present',
     path    => '/etc/nginx/sites-available/default',
     after   => 'listen 80 default_server;',
     line    => 'add_header X-Served-By $hostname;',
+	require => Package['nginx'],
 }
 
 service { 'nginx':
