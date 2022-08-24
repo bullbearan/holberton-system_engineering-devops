@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # This is a line of text
-sudo rm /etc/nginx/sites-enabled/default
-sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo service nginx restart
+sudo rm /run/nginx.pid
