@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This is a line of text
+function foo
+{
+	dig "$1.$2" | awk '/ANSWER SECTION:/{getline; printf "The subdomain %s is a %s record and points to %s\n", host, $4, $5}' host="$1"
+}
+for host in "www" "lb-01" "web-01" "web-02"
+do
+	if [[ "$2" == "" ]] || [[ "$2" == "$host" ]]; then
+		foo "$host" "$1"
+	fi
+done
