@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This is a line of text
+sudo pkill -f apache2
+sudo chown nginx:nginx /etc/nginx/nginx.config
+sudo chmod 700 /etc/nginx/nginx/nginx.config
+sudo sed -i "s/80 default_server/8080 default_server/" /etc/nginx/sites-available/default
+sudo -u nginx service nginx start
