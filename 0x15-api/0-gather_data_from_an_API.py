@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/usr/bin/python3
 "This is a line of text"
 
 if __name__ == "__main__":
@@ -19,6 +19,6 @@ if __name__ == "__main__":
             done.append(task['title'])
             completed += 1
         total += 1
-    print("Employee {} is done with tasks({}/{}:)".format(n, completed, total))
+    print("Employee {} is done with tasks({}/{}):".format(n, completed, total))
     for title in done:
         print("\t {}".format(title))
