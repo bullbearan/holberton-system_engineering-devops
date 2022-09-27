@@ -9,7 +9,7 @@ def recurse(subreddit, hot_list=[], after=None):
     """ This is an attemp to pass the checker
     that isn't working so therefore we are
     trying to..... WE??? """
-    url = f"https://www.reddit.com/r/{subreddit}/hot.json"
+    url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     headers = {'User-Agent': 'hello'}
     params = {'after': after}
     sub = requests.get(
